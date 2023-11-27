@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import { Slide } from "react-awesome-reveal";
+
 import { Link, useNavigate } from "react-router-dom";
 
 import "./styles.scss";
@@ -13,8 +14,9 @@ export const Menu = () => {
 
   return (
     <>
-      <Slide direction="right" className="flex flex-col items-center">
+      <Slide direction="down" className="flex flex-col items-center">
         <aside className="menu flex flex-col items-center mt-20">
+          <Link className="menu__link">Главная</Link>
           <Button
             type="primary"
             size="large"

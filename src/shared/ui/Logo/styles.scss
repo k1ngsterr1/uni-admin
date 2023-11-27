@@ -17,3 +17,16 @@
     @apply text-custom-blue;
   }
 }
+
+@media screen and (max-width: 448px) {
+  .logo-container {
+    &__logo {
+      width: clamp(25px, 11.681999999999999vw, 100px);
+      height: clamp(25px, 11.681999999999999vw, 100px);
+    }
+
+    &__text {
+      display: none;
+    }
+  }
+}
