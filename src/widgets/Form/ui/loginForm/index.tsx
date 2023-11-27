@@ -1,8 +1,9 @@
-import { Input, RegistrationButton } from "@shared/index";
+import { Input } from "@shared/ui/Input";
+import { Button } from "antd";
 import { usePasswordVisibility } from "@shared/lib/hooks/usePasswordVisibility";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { useLoginForm } from "@widgets/form/lib/useLoginForm";
+import { useLoginForm } from "@widgets/Form";
 import { Link } from "react-router-dom";
 import { ErrorTab } from "@shared/ui/ErrorTab";
 
@@ -27,7 +28,7 @@ export const LoginForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="form flex flex-col items-center justify-center mt-16 max-[640px]:mt-8"
+      className="form flex flex-col items-center justify-center mt-4 max-[640px]:mt-8"
     >
       <div className="form__input mt-4">
         <Input
@@ -65,11 +66,14 @@ export const LoginForm = () => {
         )}
       </div>
       {error && <ErrorTab text={error} />}
-      <RegistrationButton
-        text="Войти"
+      <Button
         onClick={handleSubmit(onSubmit)}
-        active={isValid && !isSubmitting ? "active" : "inactive"}
-      />
+        className={`registration-button mt-4 ${
+          isValid && !isSubmitting ? "active" : "inactive"
+        }`}
+      >
+        Войти
+      </Button>
       <p className="form__paragraph mt-4">
         Или забыли {""}
         <Link className="blue underline cursor-pointer" to="/change-password">

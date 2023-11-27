@@ -16,7 +16,7 @@ $custom-black: #262626;
 }
 
 h1 {
-  font-size: clamp(20px, 2.0832vw, 80px);
+  font-size: clamp(17.5px, 1.8228vw, 70px);
   font-family: "Nunito", sans-serif;
   color: $custom-black;
 }
@@ -35,7 +35,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   margin: auto;
-  @apply mt-16;
+  @apply mt-20;
 
   &--row {
     width: 86.6%;
