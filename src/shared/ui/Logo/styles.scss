@@ -1,0 +1,14 @@
+.logo-container {
+  width: auto;
+  height: auto;
+
+  &__logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  &__text {
+    font-family: "Nunito", sans-serif;
+    font-size: 23px;
+  }
+}

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  width: 86.6%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  @apply mt-32;
+
+  &--row {
+    width: 86.6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    @apply mt-32;
+    @apply mb-32;
+  }
+}
