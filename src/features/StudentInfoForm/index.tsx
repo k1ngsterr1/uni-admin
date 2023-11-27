@@ -44,18 +44,24 @@ export const StudentInfoForm = () => {
         </div>
         <Controller
           name="course"
+          rules={{ required: "Выберите ваш курс" }}
           control={control}
-          render={({ field }) => (
-            <Select
-              placeholder="Ваш курс"
-              className="form-selector"
-              onChange={(value: string) => field.onChange(value)}
-            >
-              <Option value="1">1-й курс</Option>
-              <Option value="2">2-й курс</Option>{" "}
-              <Option value="3">3-й курс</Option>{" "}
-              <Option value="4">4-й курс</Option>
-            </Select>
+          render={({ field, fieldState: { error } }) => (
+            <>
+              <Select
+                placeholder="Ваш курс"
+                className="form-selector"
+                onChange={(value: string) => field.onChange(value)}
+              >
+                <Option value="1">1-й курс</Option>
+                <Option value="2">2-й курс</Option>{" "}
+                <Option value="3">3-й курс</Option>{" "}
+                <Option value="4">4-й курс</Option>
+              </Select>
+              {error && (
+                <span className="form__input--error">{error.message}</span>
+              )}
+            </>
           )}
         ></Controller>
         <Controller
