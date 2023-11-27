@@ -125,6 +125,12 @@ p,
     @apply mt-6;
   }
 
+  .paragraph {
+    width: 90%;
+    font-size: clamp(10px, 4.6728vw, 40px);
+    @apply text-custom-black;
+  }
+
   .big-button,
   .big-button-outline,
   .registration-button {

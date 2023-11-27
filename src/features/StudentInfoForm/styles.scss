@@ -13,3 +13,17 @@
     @apply mt-4;
   }
 }
+
+@media screen and (max-width: 448px) {
+  .form-container {
+    width: 100%;
+
+    .form-selector {
+      width: 100%;
+      height: clamp(25px, 11.681999999999999vw, 100px);
+      border-radius: 0px !important;
+      outline: none;
+      @apply mt-4;
+    }
+  }
+}

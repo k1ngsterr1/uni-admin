@@ -17,12 +17,11 @@ export const StudentInfoForm = () => {
     isSubmitting,
     isValid,
     onSubmit,
-    error,
   } = useSendForm();
   return (
-    <div className="form-container flex flex-col items-center mt-10">
-      <form className="w-[80%]">
-        <div className="form-input mt-16">
+    <div className="form-container flex flex-col items-center mt-5">
+      <form className="w-[80%] flex flex-col items-center">
+        <div className="form-input mt-16 w-[100%] flex flex-col items-center">
           <Input
             placeholder="Введите ваш номер телефона"
             {...register("phone_number", {
@@ -81,6 +80,8 @@ export const StudentInfoForm = () => {
                   Artificial Intelligence
                 </Option>{" "}
                 <Option value="Program Engineering">Program Engineering</Option>
+                <Option value="Journalistics">Journalistics</Option>
+                <Option value="Business">Business</Option>
               </Select>
               {error && (
                 <span className="form__input--error">{error.message}</span>
@@ -136,7 +137,7 @@ export const StudentInfoForm = () => {
             isValid && !isSubmitting ? "active" : "inactive"
           }`}
         >
-          Зарегистрироваться
+          Отправить
         </Button>
       </form>
     </div>
