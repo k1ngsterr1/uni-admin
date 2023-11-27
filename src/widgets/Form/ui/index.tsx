@@ -1,12 +1,12 @@
 import React from "react";
-import { Input } from "@shared/index";
 import { usePasswordVisibility } from "@shared/lib/hooks/usePasswordVisibility";
-import { RegistrationButton } from "@shared/ui/registration-button";
-import { useSignUpForm } from "@widgets/form/lib/useSignUpForm";
+import { Input } from "@shared/ui/Input";
+import { useSignUpForm } from "..";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { ErrorTab } from "@shared/ui/ErrorTab";
+import { Button } from "antd";
 
 import "./styles.scss";
 
@@ -121,11 +121,14 @@ export const SignUpForm: React.FC = () => {
         )}
       </div>
       {error && <ErrorTab text={error} />}
-      <RegistrationButton
-        text="Создать аккаунт"
+      <Button
         onClick={handleSubmit(onSubmit)}
-        active={isValid && !isSubmitting ? "active" : "inactive"}
-      />
+        className={`registration-button mt-4 ${
+          isValid && !isSubmitting ? "active" : "inactive"
+        }`}
+      >
+        Зарегистрироваться
+      </Button>
       <p className="form__paragraph mt-4">
         Выполняя вход, вы соглашаетесь с нашими{" "}
         <Link to="/user-conditions" className="blue underline cursor-pointer">

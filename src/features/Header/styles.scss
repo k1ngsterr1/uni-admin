@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 32px;
+  margin-top: clamp(16px, 1.66656vw, 64px);
 
   &__buttons {
     width: auto;

@@ -60,6 +60,28 @@ h1 {
   @apply bg-custom-blue;
 }
 
+.registration-button {
+  width: 70%;
+  height: clamp(27.5px, 2.8644000000000003vw, 110px) !important;
+}
+
+.active {
+  background: $light_blue !important;
+  &:hover {
+    color: $custom-black !important;
+  }
+}
+
+.inactive {
+  @apply bg-gray-200;
+  border: none;
+  box-shadow: none;
+  cursor: default;
+  &:hover {
+    color: $custom-black !important;
+  }
+}
+
 .big-button-outline {
   width: clamp(110px, 11.457600000000001vw, 440px);
   height: clamp(25px, 2.604vw, 100px) !important;
