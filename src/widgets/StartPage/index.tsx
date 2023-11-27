@@ -1,6 +1,3 @@
-import illustration from "@assets/illustration.svg";
-import { Button } from "antd";
-
 export const StartScreen = () => {
   return (
     <div className="wrapper items-center">

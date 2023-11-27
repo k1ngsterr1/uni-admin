@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import { Slide } from "react-awesome-reveal";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "./styles.scss";
 
@@ -27,7 +27,7 @@ export const Menu = () => {
           <Button
             size="large"
             className="big-button-outline mt-5"
-            onClick={() => navigateUrl("registration")}
+            onClick={() => navigateUrl("")}
           >
             Регистрация
           </Button>

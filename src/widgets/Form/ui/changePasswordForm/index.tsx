@@ -1,9 +1,10 @@
-import { Input, RegistrationButton } from "@shared/index";
+import { Button } from "antd";
 import { usePasswordVisibility } from "@shared/lib/hooks/usePasswordVisibility";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { usePasswordChange } from "@widgets/form/lib/useChangePassword";
 import { Link } from "react-router-dom";
+import { usePasswordChange } from "@widgets/Form/lib/useChangePassword";
+import { Input } from "@shared/ui/Input";
 
 import "../styles.scss";
 
@@ -67,11 +68,14 @@ export const ChangePasswordForm = () => {
           </span>
         )}
       </div>
-      <RegistrationButton
-        text="Поменять пароль"
+      <Button
         onClick={handleSubmit(onSubmit)}
-        active={isValid && !isSubmitting ? "active" : "inactive"}
-      />
+        className={`registration-button mt-4 ${
+          isValid && !isSubmitting ? "active" : "inactive"
+        }`}
+      >
+        Поменять пароль
+      </Button>
       <p className="form__paragraph mt-4">
         Или {""}
         <Link className="blue underline cursor-pointer" to="/login">

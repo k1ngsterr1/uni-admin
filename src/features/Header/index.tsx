@@ -33,7 +33,7 @@ export const Header = () => {
           <Button
             size="large"
             className="big-button-outline"
-            onClick={() => navigateUrl("registration")}
+            onClick={() => navigateUrl("")}
           >
             Регистрация
           </Button>
