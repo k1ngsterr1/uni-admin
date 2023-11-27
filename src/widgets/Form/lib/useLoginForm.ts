@@ -23,7 +23,7 @@ export function useLoginForm() {
   const onSubmit = async (data: LoginFormData) => {
     try {
       const response = await axios.post(
-        `https://web-production-afe0.up.railway.app/token`,
+        `${import.meta.env.VITE_BASE_URL}check_status/`,
         data
       );
 
