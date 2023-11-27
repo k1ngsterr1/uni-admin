@@ -15,8 +15,7 @@ export const Menu = () => {
   return (
     <>
       <Slide direction="down" className="flex flex-col items-center">
-        <aside className="menu flex flex-col items-center mt-20">
-          <Link className="menu__link">Главная</Link>
+        <aside className="menu flex flex-col items-center  mt-20">
           <Button
             type="primary"
             size="large"
@@ -27,7 +26,7 @@ export const Menu = () => {
           </Button>
           <Button
             size="large"
-            className="big-button-outline"
+            className="big-button-outline mt-5"
             onClick={() => navigateUrl("registration")}
           >
             Регистрация

@@ -8,6 +8,7 @@ import { RegistrationPage } from "./RegistrationPage";
 import { LoginPage } from "./LoginPage";
 import { VerificationPage } from "./VerificationPage";
 import { ChangePasswordPage } from "./ChangePasswordPage";
+import { StudentInfoPage } from "./StudentInfoPage";
 
 export const MyRoutes: FC = () => {
   return (
@@ -27,6 +28,7 @@ export const MyRoutes: FC = () => {
           path={ROUTE_CONSTANTS.CHANGE_PASSWORD}
           element={<ChangePasswordPage />}
         />
+        <Route path={ROUTE_CONSTANTS.USER_INFO} element={<StudentInfoPage />} />
       </Routes>
     </Router>
   );

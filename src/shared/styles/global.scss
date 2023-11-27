@@ -15,10 +15,19 @@ $custom-black: #262626;
   box-sizing: border-box;
 }
 
+body {
+  @apply bg-gray-100;
+}
+
 h1 {
   font-size: clamp(17.5px, 1.8228vw, 70px);
   font-family: "Nunito", sans-serif;
   color: $custom-black;
+}
+
+p,
+.paragraph {
+  font-family: "Roboto", sans-serif;
 }
 
 .page {
@@ -87,6 +96,12 @@ h1 {
   }
 }
 
+.paragraph {
+  width: 40%;
+  font-size: clamp(9px, 0.93744vw, 36px);
+  @apply text-custom-black;
+}
+
 .blue {
   @apply text-custom-blue;
 }
@@ -111,6 +126,7 @@ h1 {
   }
 
   .big-button,
+  .big-button-outline,
   .registration-button {
     width: clamp(150px, 70.092vw, 600px) !important;
     height: clamp(22.5px, 10.5138vw, 90px) !important;

@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logIn } from "@shared/lib/redux/store/authSlice";
-import Cookies from "js-cookie";
 import axios from "axios";
 
 export interface LoginFormData {
