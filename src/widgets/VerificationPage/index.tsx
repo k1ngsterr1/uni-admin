@@ -25,7 +25,7 @@ export const VerificationScreen = () => {
       <Button onClick={verifyEmail} className="registration-button active mt-4">
         Зарегистрироваться
       </Button>
-      <p className="paragraph text-center mt-4">
+      <p className="text-center mt-4">
         Не пришло письмо?{" "}
         <span
           className="link blue underline cursor-pointer"

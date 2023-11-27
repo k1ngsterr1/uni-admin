@@ -38,26 +38,13 @@ export const SignUpForm: React.FC = () => {
     >
       <div className="form__input">
         <Input
-          {...register("first_name", { required: "Заполните ваше имя" })}
+          {...register("username", { required: "Заполните ваше имя" })}
           type="text"
-          placeholder="Имя"
-          isError={Boolean(errors.first_name)}
+          placeholder="Полное имя"
+          isError={Boolean(errors.username)}
         />
-        {errors.first_name && (
-          <span className="form__input--error">
-            {errors.first_name.message}
-          </span>
-        )}
-      </div>
-      <div className="form__input mt-4">
-        <Input
-          {...register("last_name", { required: "Заполните фамилию" })}
-          type="text"
-          placeholder="Фамилия"
-          isError={Boolean(errors.last_name)}
-        />
-        {errors.last_name && (
-          <span className="form__input--error">{errors.last_name.message}</span>
+        {errors.username && (
+          <span className="form__input--error">{errors.username.message}</span>
         )}
       </div>
       <div className="form__input mt-4">

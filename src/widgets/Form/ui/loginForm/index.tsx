@@ -32,7 +32,7 @@ export const LoginForm = () => {
     >
       <div className="form__input mt-4">
         <Input
-          {...register("email", {
+          {...register("username", {
             required: "Заполните электронную почту",
             pattern: {
               value: /^\S+@\S+$/i,
@@ -41,10 +41,10 @@ export const LoginForm = () => {
           })}
           type="email"
           placeholder="Email"
-          isError={Boolean(errors.email)}
+          isError={Boolean(errors.username)}
         />
-        {errors.email && (
-          <span className="form__input--error">{errors.email.message}</span>
+        {errors.username && (
+          <span className="form__input--error">{errors.username.message}</span>
         )}
       </div>
       <div className="form__input mt-4">

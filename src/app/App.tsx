@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { MyRoutes } from "@pages/index";
+import { RootState } from "@shared/lib/redux/store";
 import { useSelector } from "react-redux";
 
 export const App = () => {

@@ -7,8 +7,7 @@ import { saveEmail } from "@shared/lib/redux/store/emailSlice";
 import axios from "axios";
 
 export interface FormData {
-  first_name: string;
-  last_name: string;
+  username: string;
   email: string;
   password: string;
   password_conf: string;
@@ -34,7 +33,7 @@ export function useSignUpForm() {
   const onSubmit = async (data: FormData) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}api/account/register/`,
+        `https://web-production-afe0.up.railway.app/register`,
         data
       );
 

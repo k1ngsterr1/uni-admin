@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { saveEmail } from "@shared/lib/redux/store/emailSlice";
-
 import axios from "axios";
 
 export interface FormData {
@@ -15,7 +12,6 @@ export interface FormData {
 }
 
 export function useSendForm() {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [error, setError] = useState("");
 
@@ -37,7 +33,6 @@ export function useSendForm() {
       );
 
       console.log("Registration successful:", response.data);
-      dispatch(saveEmail(data.email));
 
       navigate("/admin");
     } catch (error: any) {
