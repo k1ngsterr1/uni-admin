@@ -77,12 +77,12 @@ export const LoginForm = () => {
       <p className="form__paragraph mt-4">
         Или забыли {""}
         <Link className="blue underline cursor-pointer" to="/change-password">
-          пароль
+          пароль?
         </Link>
       </p>
       <figure className="separator mt-4" />
       <p className="form__paragraph mt-4">
-        У вас еще нет учетной записи?
+        У вас еще нет учетной записи? {""}
         <Link to="/registration" className="blue underline cursor-pointer">
           Зарегистрироваться
         </Link>

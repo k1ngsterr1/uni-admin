@@ -82,6 +82,10 @@ h1 {
   }
 }
 
+.blue {
+  @apply text-custom-blue;
+}
+
 .big-button-outline {
   width: clamp(110px, 11.457600000000001vw, 440px);
   height: clamp(25px, 2.604vw, 100px) !important;
