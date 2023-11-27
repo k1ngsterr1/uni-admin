@@ -1,5 +1,9 @@
-import React from "react";
+import { Header } from "@features/Header";
 
 export const RegistrationPage = () => {
-  return <div className="container">index</div>;
+  return (
+    <div className="page">
+      <Header />
+    </div>
+  );
 };

@@ -1,4 +1,16 @@
 .header {
   width: 86.6%;
   height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+
+  &__buttons {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

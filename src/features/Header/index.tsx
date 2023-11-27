@@ -5,9 +5,16 @@ import { Button } from "antd";
 export const Header = () => {
   return (
     <>
-      <header className="header bg-red-600 flex border-2 items-center justify-between">
+      <header className="header">
         <Logo />
-        <Button>Войти</Button>
+        <div className="header__buttons">
+          <Button type="primary" size="large" className="big-button mr-4">
+            Войти
+          </Button>
+          <Button size="large" className="big-button-outline">
+            Регистрация
+          </Button>
+        </div>
       </header>
     </>
   );

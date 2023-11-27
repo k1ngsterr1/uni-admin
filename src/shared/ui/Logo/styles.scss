@@ -1,14 +1,19 @@
 .logo-container {
   width: auto;
   height: auto;
+  display: flex;
+  align-items: center;
 
   &__logo {
-    width: 80px;
-    height: 80px;
+    width: clamp(30px, 3.1248vw, 120px);
+    height: clamp(30px, 3.1248vw, 120px);
   }
 
   &__text {
     font-family: "Nunito", sans-serif;
-    font-size: 23px;
+    font-size: clamp(12.5px, 1.302vw, 50px);
+    margin-left: clamp(8px, 0.83328vw, 32px);
+    font-weight: bold;
+    @apply text-custom-blue;
   }
 }
