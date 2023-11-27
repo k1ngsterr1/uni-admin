@@ -23,7 +23,7 @@ export function useLoginForm() {
   const onSubmit = async (data: LoginFormData) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}check_status/`,
+        `https://pixel2protocolv1-production-c8ac.up.railway.app/token`,
         data
       );
 

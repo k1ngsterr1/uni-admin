@@ -33,7 +33,7 @@ export function useSignUpForm() {
   const onSubmit = async (data: FormData) => {
     try {
       const response = await axios.post(
-        `https://web-production-afe0.up.railway.app/register`,
+        `https://pixel2protocolv1-production-c8ac.up.railway.app/register`,
         data
       );
 

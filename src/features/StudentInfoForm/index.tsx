@@ -24,7 +24,7 @@ export const StudentInfoForm = () => {
         <div className="form-input mt-16 w-[100%] flex flex-col items-center">
           <Input
             placeholder="Введите ваш номер телефона"
-            {...register("phone_number", {
+            {...register("number", {
               required: "Заполните ваш телефон",
               pattern: {
                 value:
@@ -74,14 +74,12 @@ export const StudentInfoForm = () => {
                 className="form-selector"
                 onChange={(value: string) => field.onChange(value)}
               >
-                <Option value="Computer Science">Computer Science</Option>
-                <Option value="Cyber Security">Cyber Security</Option>{" "}
-                <Option value="Artificial Intelligence">
-                  Artificial Intelligence
-                </Option>{" "}
-                <Option value="Program Engineering">Program Engineering</Option>
-                <Option value="Journalistics">Journalistics</Option>
-                <Option value="Business">Business</Option>
+                <Option value="1">Computer Science</Option>
+                <Option value="2">Cyber Security</Option>{" "}
+                <Option value="3">Artificial Intelligence</Option>
+                <Option value="4">Program Engineering</Option>
+                <Option value="5">Journalistics</Option>
+                <Option value="6">Business</Option>
               </Select>
               {error && (
                 <span className="form__input--error">{error.message}</span>
@@ -110,7 +108,7 @@ export const StudentInfoForm = () => {
           )}
         ></Controller>
         <Controller
-          name="isGrant"
+          name="isScholarship"
           control={control}
           rules={{ required: "Ответьте на вопрос" }}
           render={({ field, fieldState: { error } }) => (
@@ -120,8 +118,8 @@ export const StudentInfoForm = () => {
                 className="form-selector"
                 onChange={(value: string) => field.onChange(value)}
               >
-                <Option value="True">Да</Option>
-                <Option value="False">Нет</Option>{" "}
+                <Option value="true">Да</Option>
+                <Option value="false">Нет</Option>{" "}
               </Select>
               {error && (
                 <span className="form__input--error mb-16">
