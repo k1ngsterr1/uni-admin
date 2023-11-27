@@ -48,21 +48,26 @@ h1 {
   }
 }
 
+.header-mob {
+  display: none;
+}
+
 .illustration {
   width: clamp(275px, 28.644000000000002vw, 1100px);
 }
 
 .big-button {
-  width: clamp(110px, 11.457600000000001vw, 440px);
-  height: clamp(25px, 2.604vw, 100px) !important;
+  width: clamp(100px, 10.416vw, 400px) !important;
+  height: clamp(22px, 2.2915200000000002vw, 88px) !important;
   background: $blue;
   border-radius: 1px !important;
   @apply bg-custom-blue;
 }
 
 .registration-button {
-  width: 70%;
+  width: clamp(210px, 21.8736vw, 840px) !important;
   height: clamp(27.5px, 2.8644000000000003vw, 110px) !important;
+  border-radius: 2px;
 }
 
 .active {
@@ -87,8 +92,29 @@ h1 {
 }
 
 .big-button-outline {
-  width: clamp(110px, 11.457600000000001vw, 440px);
-  height: clamp(25px, 2.604vw, 100px) !important;
+  width: clamp(100px, 10.416vw, 400px) !important;
+  height: clamp(22px, 2.2915200000000002vw, 88px) !important;
   border-radius: 1px !important;
   border: 2px solid $blue;
+}
+
+@media screen and (max-width: 448px) {
+  h1 {
+    font-size: clamp(15px, 7.0092vw, 60px);
+  }
+
+  .header-mob {
+    width: 90%;
+    height: auto;
+    display: flex;
+    @apply mt-6;
+  }
+
+  .big-button,
+  .registration-button {
+    width: clamp(150px, 70.092vw, 600px) !important;
+    height: clamp(22.5px, 10.5138vw, 90px) !important;
+    font-size: clamp(8px, 3.73824vw, 32px) !important;
+    margin-right: 0px;
+  }
 }

@@ -1,11 +1,10 @@
-import { Logo } from "@shared/ui/Logo";
 import { Button } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Slide } from "react-awesome-reveal";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./styles.scss";
-import Hamburger from "hamburger-react";
 
-export const Header = () => {
+export const Menu = () => {
   const navigate = useNavigate();
 
   function navigateUrl(url: string) {
@@ -14,9 +13,8 @@ export const Header = () => {
 
   return (
     <>
-      <header className="header">
-        <Logo />
-        <div className="header__buttons">
+      <Slide direction="right" className="flex flex-col items-center">
+        <aside className="menu flex flex-col items-center mt-20">
           <Button
             type="primary"
             size="large"
@@ -32,12 +30,8 @@ export const Header = () => {
           >
             Регистрация
           </Button>
-        </div>
-      </header>
-      <header className="header-mob  flex items-center justify-between">
-        <Logo />
-        <Hamburger color="#004371" />
-      </header>
+        </aside>
+      </Slide>
     </>
   );
 };

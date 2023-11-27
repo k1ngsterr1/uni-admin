@@ -1,0 +1,9 @@
+.menu {
+  width: 100%;
+  height: 100vh;
+
+  &__link {
+    @apply text-custom-blue;
+    font-size: 25px;
+  }
+}
