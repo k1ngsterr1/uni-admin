@@ -67,52 +67,72 @@ export const StudentInfoForm = () => {
         <Controller
           name="group"
           control={control}
-          render={({ field }) => (
-            <Select
-              placeholder="Ваша группа "
-              className="form-selector"
-              onChange={(value: string) => field.onChange(value)}
-            >
-              <Option value="Computer Science">Computer Science</Option>
-              <Option value="Cyber Security">Cyber Security</Option>{" "}
-              <Option value="Artificial Intelligence">
-                Artificial Intelligence
-              </Option>{" "}
-              <Option value="Program Engineering">Program Engineering</Option>
-            </Select>
+          rules={{ required: "Выберите вашу группу" }}
+          render={({ field, fieldState: { error } }) => (
+            <>
+              <Select
+                placeholder="Ваша группа "
+                className="form-selector"
+                onChange={(value: string) => field.onChange(value)}
+              >
+                <Option value="Computer Science">Computer Science</Option>
+                <Option value="Cyber Security">Cyber Security</Option>{" "}
+                <Option value="Artificial Intelligence">
+                  Artificial Intelligence
+                </Option>{" "}
+                <Option value="Program Engineering">Program Engineering</Option>
+              </Select>
+              {error && (
+                <span className="form__input--error">{error.message}</span>
+              )}
+            </>
+          )}
+        ></Controller>
+        <Controller
+          name="isGrant"
+          rules={{ required: "Ответьте на вопрос" }}
+          control={control}
+          render={({ field, fieldState: { error } }) => (
+            <>
+              <Select
+                placeholder="Вы на гранте?"
+                className="form-selector"
+                onChange={(value: string) => field.onChange(value)}
+              >
+                <Option value="True">Да</Option>
+                <Option value="False">Нет</Option>{" "}
+              </Select>
+              {error && (
+                <span className="form__input--error">{error.message}</span>
+              )}
+            </>
           )}
         ></Controller>
         <Controller
           name="isGrant"
           control={control}
-          render={({ field }) => (
-            <Select
-              placeholder="Вы на гранте?"
-              className="form-selector"
-              onChange={(value: string) => field.onChange(value)}
-            >
-              <Option value="True">Да</Option>
-              <Option value="False">Нет</Option>{" "}
-            </Select>
-          )}
-        ></Controller>
-        <Controller
-          name="isGrant"
-          control={control}
-          render={({ field }) => (
-            <Select
-              placeholder="Имеется стипендия?"
-              className="form-selector mb-16"
-              onChange={(value: string) => field.onChange(value)}
-            >
-              <Option value="True">Да</Option>
-              <Option value="False">Нет</Option>{" "}
-            </Select>
+          rules={{ required: "Ответьте на вопрос" }}
+          render={({ field, fieldState: { error } }) => (
+            <>
+              <Select
+                placeholder="Имеется стипендия?"
+                className="form-selector"
+                onChange={(value: string) => field.onChange(value)}
+              >
+                <Option value="True">Да</Option>
+                <Option value="False">Нет</Option>{" "}
+              </Select>
+              {error && (
+                <span className="form__input--error mb-16">
+                  {error.message}
+                </span>
+              )}
+            </>
           )}
         ></Controller>
         <Button
           onClick={handleSubmit(onSubmit)}
-          className={`registration-button mt-4 ${
+          className={`registration-button mt-5 mb-16 ${
             isValid && !isSubmitting ? "active" : "inactive"
           }`}
         >
