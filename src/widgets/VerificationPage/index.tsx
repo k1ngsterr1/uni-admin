@@ -17,7 +17,7 @@ export const VerificationScreen = () => {
         alt="illustration"
         className="w-[25%] h-auto max-[1024px]:w-[50%]"
       />
-      <h1 className="email w-[45%] text-center mt-8">
+      <h1 className="email w-[45%] text-center mt-8 max-[448px]:w-[100%] max-[448px]:text-2xl">
         На вашу почту <span className="blue">{email}</span> пришло письмо с
         подтверждением
       </h1>
@@ -25,7 +25,7 @@ export const VerificationScreen = () => {
       <Button onClick={verifyEmail} className="registration-button active mt-4">
         Зарегистрироваться
       </Button>
-      <p className="paragraph mt-4">
+      <p className="paragraph text-center mt-4">
         Не пришло письмо?{" "}
         <span
           className="link blue underline cursor-pointer"
