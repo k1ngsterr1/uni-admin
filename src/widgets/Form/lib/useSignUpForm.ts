@@ -40,7 +40,7 @@ export function useSignUpForm() {
       console.log("Registration successful:", response.data);
       dispatch(saveEmail(data.email));
 
-      navigate("/verification");
+      navigate("/login");
     } catch (error: any) {
       if (error.response) {
         setError(
