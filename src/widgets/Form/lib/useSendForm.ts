@@ -25,10 +25,8 @@ export function useSendForm() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      // Retrieve the token from local storage
       const token = localStorage.getItem("token");
 
-      // Make sure the token exists before trying to send it
       if (!token) {
         throw new Error("No token found");
       }
