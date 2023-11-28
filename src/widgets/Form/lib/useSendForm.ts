@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export interface FormData {
-  phone_number: string;
+  number: string;
   course: string;
   group: string;
   isGrant: boolean;
@@ -12,7 +11,6 @@ export interface FormData {
 }
 
 export function useSendForm() {
-  const navigate = useNavigate();
   const [error, setError] = useState("");
 
   const {
@@ -27,14 +25,28 @@ export function useSendForm() {
 
   const onSubmit = async (data: FormData) => {
     try {
+      // Retrieve the token from local storage
+      const token = localStorage.getItem("token");
+
+      // Make sure the token exists before trying to send it
+      if (!token) {
+        throw new Error("No token found");
+      }
+
       const response = await axios.post(
-        `${import.meta.env.VITE_BASE_URL}api/account/register/`,
-        data
+        `https://pixel2protocolv1-production-c8ac.up.railway.app/user-info`,
+        data,
+        {
+          headers: {
+            // Include the token in the authorization header
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
 
       console.log("Registration successful:", response.data);
 
-      navigate("/admin");
+      window.location.href = "https://uni-panel.vercel.app/";
     } catch (error: any) {
       if (error.response) {
         setError(

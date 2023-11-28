@@ -33,12 +33,10 @@ export const StudentInfoForm = () => {
               },
             })}
             type="phone"
-            isError={Boolean(errors.phone_number)}
+            isError={Boolean(errors.number)}
           />
-          {errors.phone_number && (
-            <span className="form__input--error">
-              {errors.phone_number.message}
-            </span>
+          {errors.number && (
+            <span className="form__input--error">{errors.number.message}</span>
           )}
         </div>
         <Controller
@@ -52,10 +50,10 @@ export const StudentInfoForm = () => {
                 className="form-selector"
                 onChange={(value: string) => field.onChange(value)}
               >
-                <Option value="1">1-й курс</Option>
-                <Option value="2">2-й курс</Option>{" "}
-                <Option value="3">3-й курс</Option>{" "}
-                <Option value="4">4-й курс</Option>
+                <Option value={1}>1-й курс</Option>
+                <Option value={2}>2-й курс</Option>{" "}
+                <Option value={3}>3-й курс</Option>{" "}
+                <Option value={4}>4-й курс</Option>
               </Select>
               {error && (
                 <span className="form__input--error">{error.message}</span>
@@ -74,12 +72,12 @@ export const StudentInfoForm = () => {
                 className="form-selector"
                 onChange={(value: string) => field.onChange(value)}
               >
-                <Option value="1">Computer Science</Option>
-                <Option value="2">Cyber Security</Option>{" "}
-                <Option value="3">Artificial Intelligence</Option>
-                <Option value="4">Program Engineering</Option>
-                <Option value="5">Journalistics</Option>
-                <Option value="6">Business</Option>
+                <Option value={1}>Computer Science</Option>
+                <Option value={2}>Cyber Security</Option>{" "}
+                <Option value={3}>Artificial Intelligence</Option>
+                <Option value={4}>Program Engineering</Option>
+                <Option value={5}>Journalistics</Option>
+                <Option value={6}>Business</Option>
               </Select>
               {error && (
                 <span className="form__input--error">{error.message}</span>
@@ -98,8 +96,8 @@ export const StudentInfoForm = () => {
                 className="form-selector"
                 onChange={(value: string) => field.onChange(value)}
               >
-                <Option value="True">Да</Option>
-                <Option value="False">Нет</Option>{" "}
+                <Option value={true}>Да</Option>
+                <Option value={false}>Нет</Option>{" "}
               </Select>
               {error && (
                 <span className="form__input--error">{error.message}</span>
@@ -118,8 +116,8 @@ export const StudentInfoForm = () => {
                 className="form-selector"
                 onChange={(value: string) => field.onChange(value)}
               >
-                <Option value="true">Да</Option>
-                <Option value="false">Нет</Option>{" "}
+                <Option value={true}>Да</Option>
+                <Option value={false}>Нет</Option>{" "}
               </Select>
               {error && (
                 <span className="form__input--error mb-16">

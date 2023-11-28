@@ -1,3 +1,4 @@
+import { StudentInfoForm } from "@features/StudentInfoForm";
 import SignUpForm from "@widgets/Form/ui";
 
 export const RegistrationScreen = () => {

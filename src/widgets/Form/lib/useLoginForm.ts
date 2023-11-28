@@ -21,17 +21,28 @@ export function useLoginForm() {
   });
 
   const onSubmit = async (data: LoginFormData) => {
+    console.log(data);
     try {
+      const formData = new FormData();
+      formData.append("username", data.username);
+      formData.append("password", data.password);
       const response = await axios.post(
-        `https://pixel2protocolv1-production-c8ac.up.railway.app/token`,
-        data
+        "https://pixel2protocolv1-production-c8ac.up.railway.app/token",
+        formData
       );
+
+      // You should adjust this if the token is located elsewhere in the response
+      const token = response.data.access_token;
+
+      // Save the token to local storage
+      localStorage.setItem("token", token);
 
       console.log("Login successful:", response.data);
 
-      navigate("/");
+      navigate("/user-info");
     } catch (error: any) {
       if (error.response) {
+        console.log(error.data);
         console.error("Login failed with status:", error.response.status);
         setError(`Ошибка логина: ${error.response.status}`);
       } else if (error.request) {

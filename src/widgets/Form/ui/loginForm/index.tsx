@@ -33,6 +33,20 @@ export const LoginForm = () => {
       <div className="form__input mt-4">
         <Input
           {...register("username", {
+            required: "Заполните полное имя",
+          })}
+          type="text"
+          name="username"
+          placeholder="Полное имя"
+          isError={Boolean(errors.username)}
+        />
+        {errors.username && (
+          <span className="form__input--error">{errors.username.message}</span>
+        )}
+      </div>
+      {/* <div className="form__input mt-4">
+        <Input
+          {...register("email", {
             required: "Заполните электронную почту",
             pattern: {
               value: /^\S+@\S+$/i,
@@ -41,12 +55,12 @@ export const LoginForm = () => {
           })}
           type="email"
           placeholder="Email"
-          isError={Boolean(errors.username)}
+          isError={Boolean(errors.email)}
         />
-        {errors.username && (
-          <span className="form__input--error">{errors.username.message}</span>
+        {errors.email && (
+          <span className="form__input--error">{errors.email.message}</span>
         )}
-      </div>
+      </div> */}
       <div className="form__input mt-4">
         <Input
           {...register("password", {
@@ -54,6 +68,7 @@ export const LoginForm = () => {
           })}
           type={isPasswordVisible ? "text" : "password"}
           placeholder="Пароль"
+          name="password"
           isError={Boolean(errors.password)}
         />
         <FontAwesomeIcon
