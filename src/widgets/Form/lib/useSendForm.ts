@@ -46,7 +46,7 @@ export function useSendForm() {
 
       console.log("Registration successful:", response.data);
 
-      window.location.href = `https://uni-panel.vercel.app/?token=${encodeURIComponent(
+      window.location.href = `https://uni-panel-rouge.vercel.app/?token=${encodeURIComponent(
         token
       )}`;
     } catch (error: any) {
