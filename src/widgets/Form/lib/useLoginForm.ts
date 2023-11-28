@@ -31,12 +31,12 @@ export function useLoginForm() {
         formData
       );
 
-      // You should adjust this if the token is located elsewhere in the response
       const token = response.data.access_token;
+      document.cookie = `token=${token};path=/;max-age=3600;Secure;HttpOnly;SameSite=None`;
 
-      // Save the token to local storage
       localStorage.setItem("token", token);
 
+      console.log("token:", token);
       console.log("Login successful:", response.data);
 
       navigate("/user-info");

@@ -42,9 +42,13 @@ export function useSendForm() {
         }
       );
 
+      // Редирект с токеном в URL
+
       console.log("Registration successful:", response.data);
 
-      window.location.href = "https://uni-panel.vercel.app/";
+      window.location.href = `https://uni-panel.vercel.app/?token=${encodeURIComponent(
+        token
+      )}`;
     } catch (error: any) {
       if (error.response) {
         setError(

@@ -97,7 +97,7 @@ export const StudentInfoForm = () => {
                 onChange={(value: string) => field.onChange(value)}
               >
                 <Option value={true}>Да</Option>
-                <Option value={false}>Нет</Option>{" "}
+                <Option value="false">Нет</Option>{" "}
               </Select>
               {error && (
                 <span className="form__input--error">{error.message}</span>
@@ -117,7 +117,7 @@ export const StudentInfoForm = () => {
                 onChange={(value: string) => field.onChange(value)}
               >
                 <Option value={true}>Да</Option>
-                <Option value={false}>Нет</Option>{" "}
+                <Option value="false">Нет</Option>{" "}
               </Select>
               {error && (
                 <span className="form__input--error mb-16">
